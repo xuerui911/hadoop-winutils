@@ -6,20 +6,36 @@ Windows有最长路径限制，解压Hadoop源码到某盘根目录，并重命�
 
 
 我的环境：
-WIN10 20H2 19041.450  
+WIN10 20H2 19041.450
+
 JDK 8u261 （官网说支持JAVA11为运行时，但不支持用JAVA11编译）  
+
 Cmake最新版、zlib最新版、git最新版、protocolbuffer最新版、maven最新版
+
+VS2019
 
 
 步骤：
 安装git cmake Python JDK8并添加环境变量，注意安装git时选用UNIX命令要选最后一个
 
 ENV：
-ZLIB_HOME    JAVA_HOME      MAVEN_HOME
+添加环境变量ZLIB_HOME    JAVA_HOME      MAVEN_HOME
 
 添加环境变量Platform  值为x64
 
 PATH添加JAVA_HOME\bin      MAVEN_HOME\bin
+
+
+
+VS DEV COMMAND PROMPT执行：
+
+#进入VS安装目录找到设置平台的批处理
+
+cd C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build
+
+vcvarsall.bat x86_amd64
+
+
 
 
 
@@ -30,6 +46,8 @@ nmake命令在系统cmd下找不到命令，用VS命令行运行：
 cd C:\zlib-1.2.11
 
 nmake -f win32/Makefile.msc 
+
+
 
 ProtocolBuffer最新版
 https://github.com/protocolbuffers/protobuf/releases
@@ -48,15 +66,8 @@ mvn install
 
 
 
-VS DEV COMMAND PROMPT执行：
 
-#进入VS安装目录找到设置平台的批处理
-
-cd C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build
-
-vcvarsall.bat x86_amd64
-
-VS打开native.sln和winutils.sln升级到最新
+VS打开native.sln和winutils.sln按提示升级到最新
 
 
 
