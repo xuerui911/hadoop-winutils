@@ -24,13 +24,13 @@ nmake命令在系统cmd下找不到命令，用VS命令行运行：
 cd C:\zlib-1.2.11
 nmake -f win32/Makefile.msc 
 
-ProtocolBuffer
+ProtocolBuffer最新版
 https://github.com/protocolbuffers/protobuf/releases
 https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-java-3.13.0.zip
 https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-win64.zip
 将两个压缩包解压，然后将 protoc.exe 复制到 protobuf-$version\src 目录下，将src文件夹加入环境变量
-PATH添加C:\protobuf-java-3.13.0\src
-命令行进入C:\protobuf-java-3.13.0\java
+PATH添加C:\protobuf-java-3.13.0\protobuf-3.13.0\src
+命令行进入C:\protobuf-java-3.13.0\protobuf-3.13.0\java
 mvn install
 
 
@@ -57,6 +57,7 @@ mvn package -Pdist,native-win  -Dmaven.test.skip=true -Dtar -Dmaven.javadoc.skip
 
 Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (make) on project hadoop-hdfs-native-client: An Ant BuildException has occured: exec returned: 1
 [ERROR] around Ant part ...<exec failοnerrοr="true" dir="C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target/native" executable="msbuild">... @ 11:135 in C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\antrun\build-main.xml
+
      cmake和MsBuild莫名报错，暂时在hadoop-hdfs-project\hadoop-hdfs-native-client\pom.xml中，屏蔽它们的错误
 camke和msbuild，failonerror值false改为true
 
@@ -74,6 +75,7 @@ camke和msbuild，failonerror值false改为true
             <enabled>true</enabled>
         </snapshots>
     </repository>
+
 
 在C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\下创建C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\bin\RelWithDebInfo目录
 
