@@ -6,8 +6,8 @@ Windows有最长路径限制，解压Hadoop源码到某盘根目录，并重命�
 
 
 我的环境：
-WIN10 19041.450
-JDK 8u261 （官网说支持JAVA11为运行时，但不支持用JAVA11编译）
+WIN10 20H2 19041.450  
+JDK 8u261 （官网说支持JAVA11为运行时，但不支持用JAVA11编译）  
 Cmake最新版、zlib最新版、git最新版、protocolbuffer最新版、maven最新版
 
 
