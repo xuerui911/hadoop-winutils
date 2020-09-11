@@ -13,15 +13,22 @@ Cmake最新版、zlib最新版、git最新版、protocolbuffer最新版、maven�
 
 步骤：
 安装git cmake Python JDK8并添加环境变量，注意安装git时选用UNIX命令要选最后一个
+
 ENV：
 ZLIB_HOME    JAVA_HOME      MAVEN_HOME
-PATH添加JAVA_HOME\bin      MAVEN_HOME\bin
+
 添加环境变量Platform  值为x64
+
+PATH添加JAVA_HOME\bin      MAVEN_HOME\bin
+
 
 
 zlib.net下载最新版压缩包并解压到C盘根目录
+
 nmake命令在系统cmd下找不到命令，用VS命令行运行：
+
 cd C:\zlib-1.2.11
+
 nmake -f win32/Makefile.msc 
 
 ProtocolBuffer最新版
