@@ -69,6 +69,8 @@ mvn package -Pdist,native-win  -Dmaven.test.skip=true -Dtar -Dmaven.javadoc.skip
 
 遇到的错误及解决办法（有些地方可能忘了记录错误只记了解决办法）：
 
+
+
 Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (make) on project hadoop-hdfs-native-client: An Ant BuildException has occured: exec returned: 1
 [ERROR] around Ant part ...<exec failοnerrοr="true" dir="C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target/native" executable="msbuild">... @ 11:135 in C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\antrun\build-main.xml
 
@@ -80,19 +82,10 @@ Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (mak
 
 
 
-在源码根目录pom.xml中repositories中加入阿里云镜像，snapshots开启，并将jboss仓库注释掉，否则会下载很慢
-//	<repository>
-		<id>nexus-aliyun</id>
-		<name>nexus-aliyun</name>
-		<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-		<releases>
-		    <enabled>true</enabled>
-		</releases>
-		<snapshots>
-		    <enabled>true</enabled>
-		</snapshots>
-	</repository>
-//
+
+在源码根目录pom.xml中repositories模块中加入阿里云镜像，snapshots设置为true，并将jboss仓库注释掉，否则会下载很慢
+
+添加仓库方法请自行搜索，我直接把配置粘过来在网页中显示不出来。
 
 在C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\下创建C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\bin\RelWithDebInfo目录
 
