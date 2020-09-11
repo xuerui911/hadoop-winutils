@@ -28,8 +28,10 @@ ProtocolBuffer最新版
 https://github.com/protocolbuffers/protobuf/releases
 https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-java-3.13.0.zip
 https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-win64.zip
-将两个压缩包解压，然后将 protoc.exe 复制到 protobuf-$version\src 目录下，将src文件夹加入环境变量
+将两个压缩包解压，然后将protoc-3.13.0-win64文件夹中的protoc.exe 复制到 protobuf-java-3.13.0\protoc-3.13.0\src 目录下，将src文件夹加入环境变量
+
 PATH添加C:\protobuf-java-3.13.0\protobuf-3.13.0\src
+
 命令行进入C:\protobuf-java-3.13.0\protobuf-3.13.0\java
 mvn install
 
@@ -44,12 +46,9 @@ VS打开native.sln和winutils.sln升级到最新
 
 
 
+
 maven编译源码命令（不进行测试，节省时间）：
 mvn package -Pdist,native-win  -Dmaven.test.skip=true -Dtar -Dmaven.javadoc.skip=true
-
-
-
-
 
 
 
