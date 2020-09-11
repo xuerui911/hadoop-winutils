@@ -81,7 +81,7 @@ Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (mak
 
 
 在源码根目录pom.xml中repositories中加入阿里云镜像，snapshots开启，并将jboss仓库注释掉，否则会下载很慢
-	<repository>
+/**	<repository>
 		<id>nexus-aliyun</id>
 		<name>nexus-aliyun</name>
 		<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
@@ -92,7 +92,7 @@ Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.7:run (mak
 		    <enabled>true</enabled>
 		</snapshots>
 	</repository>
-
+**/
 
 在C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\下创建C:\h3s\hadoop-hdfs-project\hadoop-hdfs-native-client\target\native\bin\RelWithDebInfo目录
 
@@ -120,9 +120,11 @@ nodejs官网最新版本为14.10.1
 
 遂将C:\h3s\hadoop-yarn-project\hadoop-yarn\hadoop-yarn-applications\hadoop-yarn-applications-catalog\hadoop-yarn-applications-catalog-webapp中
 
-pom.xml中的 <nodeVersion>v8.11.3</nodeVersion>   <yarnVersion>v1.7.0</yarnVersion> 
+pom.xml中的 
+#  <nodeVersion>v8.11.3</nodeVersion>   <yarnVersion>v1.7.0</yarnVersion> 
 
-改为 <nodeVersion>v14.10.1</nodeVersion>  <yarnVersion>v1.22.5</yarnVersion>并再次mvn尝试。
+改为#   <nodeVersion>v14.10.1</nodeVersion>  <yarnVersion>v1.22.5</yarnVersion> 
+并再次mvn尝试。
 
 下载nodejs还是过于缓慢，复制命令行nodejs.exe安装包地址到浏览器手动下载，并复制到命令行提示的目录并重命名
 
